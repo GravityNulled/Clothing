@@ -1,6 +1,7 @@
 const CryptoJS = require("crypto-js");
+const UserModel = require("../models/UserModel");
 const User = require("../models/UserModel");
-const { verifytokenAuth } = require("../utils/verifyToken");
+const { verifytokenAuth, verifyTokenAdmin } = require("../utils/verifyToken");
 
 const router = require("express").Router();
 
@@ -24,6 +25,25 @@ router.put("/update/:id", verifytokenAuth, async (req, res) => {
   } catch (error) {
     return res.status(500).send("An Error Occured!", error);
   }
+});
+
+//GET SINGLE USER
+router.get("/get/:id", verifytokenAuth, async (req, res) => {
+  const id = req.params.id;
+  try {
+    const user = await User.findById(id);
+    if (!user) return res.status(500).send("No user found!");
+    return res.status(200).send(user);
+  } catch (error) {
+    return res.status(500).send("Bad Server Error");
+  }
+});
+
+//GET ALL USERS
+
+router.get("/getall/", verifyTokenAdmin, async (req, res) => {
+  const users = await User.find();
+  return res.status(200).send(users);
 });
 
 module.exports = router;
