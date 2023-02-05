@@ -40,8 +40,7 @@ router.get("/get/:id", verifytokenAuth, async (req, res) => {
 });
 
 //GET ALL USERS
-
-router.get("/getall/", verifyTokenAdmin, async (req, res) => {
+router.get("/", verifyTokenAdmin, async (req, res) => {
   const users = await User.find();
   return res.status(200).send(users);
 });

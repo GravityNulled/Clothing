@@ -6,6 +6,9 @@ var cookieParser = require("cookie-parser");
 
 const userRoute = require("./routes/UserRoute");
 const authRoute = require("./routes/AuthRoute");
+const productRoute = require("./routes/ProductRoute");
+const cartRoute = require("./routes/CartRoute");
+const orderRoute = require("./routes/OrderRoute");
 dotenv.config();
 
 const app = express();
@@ -24,5 +27,8 @@ mongoose
   })
   .catch((err) => console.log(err));
 
-app.use("/api/user", userRoute);
-app.use("/api/user", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/users", authRoute);
+app.use("/api/products", productRoute);
+app.use("/api/cart", cartRoute);
+app.use("/api/order", orderRoute);
