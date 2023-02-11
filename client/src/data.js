@@ -122,3 +122,26 @@ export const Products = [
     price: "10",
   },
 ];
+
+export const BannerSlider = [
+  {
+    img: BrownHat,
+    heading: "summer sale",
+    para: "DONT COMPROMISE ON STYLE! GET FLAT 30% OFF",
+  },
+  {
+    img: BrownJacket,
+    heading: "summer sale",
+    para: "DONT COMPROMISE ON STYLE! GET FLAT 30% OFF",
+  },
+  {
+    img: shirtHanger,
+    heading: "summer sale",
+    para: "DONT COMPROMISE ON STYLE! GET FLAT 30% OFF",
+  },
+  {
+    img: WomenHeels,
+    heading: "summer sale",
+    para: "DONT COMPROMISE ON STYLE! GET FLAT 30% OFF",
+  },
+];

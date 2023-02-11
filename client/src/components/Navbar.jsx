@@ -1,10 +1,12 @@
 import React from "react";
 import { HiShoppingBag } from "react-icons/hi";
 import { AiOutlineDown } from "react-icons/ai";
+import Advert from "./Advert";
 
 const Navbar = () => {
   return (
-    <nav className="">
+    <header className="shadow-sm">
+      <Advert />
       <div className="container mx-auto md:w-5/6">
         <div className="flex justify-between items-center">
           <div className="hidden md:flex items-center gap-10 justify-between">
@@ -31,7 +33,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
