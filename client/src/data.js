@@ -11,9 +11,15 @@ import WomenHeels from "../src/assets/images/WomenHeels.jpg";
 import WomenHeels2 from "../src/assets/images/WomenHeels2.jpg";
 import WomenShoes from "../src/assets/images/WomenShoes.jpg";
 import WhiteShirt from "../src/assets/images/WhiteShirt.jpg";
+import model from "../src/assets/images/model.jpg";
+import model2 from "../src/assets/images/model2.jpg";
+import model3 from "../src/assets/images/model3.jpg";
+import jacket from "../src/assets/images/jacket.jpg";
+import jacket2 from "../src/assets/images/jacket2.jpg";
 
 export const Products = [
   {
+    id: 1,
     name: "Black Shirt",
     img: BlackShirt,
     cat: "Shirts",
@@ -23,6 +29,7 @@ export const Products = [
     price: "20",
   },
   {
+    id: 2,
     name: "Blue Shirt",
     img: BlueShirt,
     cat: "Shirts",
@@ -32,6 +39,7 @@ export const Products = [
     price: "16",
   },
   {
+    id: 3,
     name: "Blue TShirt",
     img: BlueTshirt,
     cat: "TShirts",
@@ -41,15 +49,17 @@ export const Products = [
     price: "18",
   },
   {
+    id: 4,
     name: "Brown Hat",
     img: BrownHat,
     cat: "Hats",
-    desc: "Brown Hat",
+    desc: "Brown Hat with some toppings",
     color: "brown",
     size: "Large",
     price: "20",
   },
   {
+    id: 5,
     name: "Brown Jacket",
     img: BrownJacket,
     cat: "Jackets",
@@ -59,6 +69,7 @@ export const Products = [
     price: "50",
   },
   {
+    id: 6,
     name: "Nike Air Force",
     cat: "Shoes",
     img: NikeAirForce,
@@ -68,6 +79,7 @@ export const Products = [
     price: "99",
   },
   {
+    id: 7,
     name: "Nike Air Max",
     cat: "Shoes",
     img: NikeAirMax,
@@ -77,6 +89,7 @@ export const Products = [
     price: "160",
   },
   {
+    id: 8,
     name: "Women Heels",
     cat: "Shoes",
     img: WomenHeels,
@@ -86,6 +99,7 @@ export const Products = [
     price: "130",
   },
   {
+    id: 9,
     name: "Women Heels",
     cat: "Shoes",
     img: WomenHeels2,
@@ -95,6 +109,7 @@ export const Products = [
     price: "130",
   },
   {
+    id: 10,
     name: "Women Heels",
     cat: "Shoes",
     img: WomenShoes,
@@ -104,6 +119,7 @@ export const Products = [
     price: "130",
   },
   {
+    id: 11,
     name: "Nike Jordan",
     cat: "Shoes",
     img: NikeJordan,
@@ -113,6 +129,7 @@ export const Products = [
     price: "130",
   },
   {
+    id: 12,
     name: "White Shirt",
     cat: "Shoes",
     img: WhiteShirt,
@@ -143,5 +160,32 @@ export const BannerSlider = [
     img: WomenHeels,
     heading: "summer sale",
     para: "DONT COMPROMISE ON STYLE! GET FLAT 30% OFF",
+  },
+];
+
+export const cardData = [
+  {
+    img: model,
+    title: "Shirt Style",
+  },
+  {
+    img: model2,
+    title: "Long Love",
+  },
+  {
+    img: model3,
+    title: "Shirt Style",
+  },
+  {
+    img: jacket,
+    title: "Jacket Lover",
+  },
+  {
+    img: jacket2,
+    title: "Black Jacket",
+  },
+  {
+    img: model,
+    title: "Shirt Style",
   },
 ];

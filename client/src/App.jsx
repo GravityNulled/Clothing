@@ -40,17 +40,7 @@ function App() {
   ]);
   return (
     <>
-      {/* <Navbar /> */}
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="/Cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter> */}
       <RouterProvider router={router} />
-      {/* <Footer /> */}
     </>
   );
 }

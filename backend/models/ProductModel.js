@@ -9,10 +9,10 @@ const productSchema = new mongoose.Schema(
     },
     desc: { type: String, required: true },
     img: { type: String, required: true },
-    categories: { type: Array},
+    categories: { type: Array },
     price: { type: Number, required: true },
-    size: { type: String },
-    color: { type: String },
+    size: { type: String, default: "Medium" },
+    color: { type: String, default: "white" },
   },
   { timestamps: true }
 );

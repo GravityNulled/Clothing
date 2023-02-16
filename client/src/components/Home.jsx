@@ -1,7 +1,6 @@
 import React from "react";
-import { BannerSlider } from "../data";
+import { BannerSlider, cardData } from "../data";
 import HomeSlider from "./HomeSlider";
-import Footer from "./Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -9,10 +8,10 @@ import "swiper/css/navigation";
 import Card from "./Card";
 import { Pagination, Navigation, Autoplay } from "swiper";
 import ProductList from "./ProductList";
-import { Outlet } from "react-router-dom";
+import { Mailing } from "./Mailing";
 const Home = () => {
   return (
-    <section className="h-[90vh]">
+    <section className="w-full">
       <div className="container mx-auto md:w-5/6">
         <Swiper
           autoplay={{
@@ -23,7 +22,7 @@ const Home = () => {
         >
           {BannerSlider.map((banner, index) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <div className="flex">
                   <HomeSlider
                     key={index}
@@ -36,9 +35,19 @@ const Home = () => {
             );
           })}
         </Swiper>
+
+        {/* CATEGORIES */}
+        <div className="grid gap-4 mt-3 md:grid-cols-2 xl:grid-cols-3">
+          {cardData.map((card, index) => {
+            return <Card key={index} img={card.img} title={card.title} />;
+          })}
+        </div>
+        {/* Product List */}
         <ProductList />
+
+        {/* Mailing List */}
+        <Mailing />
       </div>
-      {/* <Outlet /> */}
     </section>
   );
 };
