@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Products } from "../data";
+import { useSelector, useDispatch } from "react-redux";
+import { add, decrement, increment } from "../Redux/cartSlice";
 const Product = () => {
   const { id } = useParams();
-  const item = Products.filter((prod, index) => {
+  const [amount, setAmount] = useState(1);
+  const item = Products.filter((prod) => {
     return prod.id == id;
   });
-  const [amount, setAmount] = useState(1);
+  item[0].amount = amount;
+  const dispatch = useDispatch();
   return (
     <div className="pt-10 md:pt-12 pb-10 w-full ">
       <div className="container mx-auto md:w-5/6">
@@ -36,21 +40,26 @@ const Product = () => {
             <div className="flex flex-col gap-7">
               <div className="flex items-center">
                 <button
-                  onClick={() => setAmount(amount + 1)}
-                  className="px-6 py-1 border-black border-2"
-                >
-                  +
-                </button>
-                <span className="px-2">{amount}</span>
-                <button
                   disabled={amount < 2}
+                  onClick={() => setAmount((prev) => prev - 1)}
                   className="px-6 py-1 border-black border-2"
-                  onClick={() => setAmount(amount + -1)}
                 >
                   -
                 </button>
+                <span className="px-2">{amount}</span>
+                <button
+                  className="px-6 py-1 border-black border-2"
+                  onClick={() => setAmount((prev) => prev + 1)}
+                >
+                  +
+                </button>
               </div>
-              <button className="px-6 bg-amber-400 py-1 border md:w-[200px]">
+              <button
+                onClick={() => {
+                  dispatch(add(item[0]));
+                }}
+                className="px-6 bg-amber-400 py-1 border md:w-[200px]"
+              >
                 Add to Cart
               </button>
             </div>

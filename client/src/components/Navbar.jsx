@@ -1,5 +1,6 @@
 import React from "react";
-import { HiShoppingBag } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import { FiShoppingBag } from "react-icons/fi";
 import { AiOutlineDown } from "react-icons/ai";
 import Advert from "./Advert";
 
@@ -25,9 +26,17 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex">
-            <h1 className="font-bold text-2xl">CLOTHING</h1>
+            <Link to={"/"}>
+              <h1 className="font-bold text-2xl">CLOTHING</h1>
+            </Link>
           </div>
-          <div className="flex gap-1 md:gap-5">
+          <div className="flex items-center gap-1 md:gap-5">
+            <Link to={"/cart"}>
+              <div className="relative">
+                <FiShoppingBag size={20} />
+                <span className="absolute top-0 right-0 text-red-500">0</span>
+              </div>
+            </Link>
             <button className="font-bold p-3">REGISTER</button>
             <button className="font-bold p-3">LOGIN</button>
           </div>

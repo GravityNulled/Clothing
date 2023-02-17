@@ -1,4 +1,5 @@
 import React from "react";
+import { BiShoppingBag } from "react-icons/bi";
 import { BannerSlider, cardData } from "../data";
 import HomeSlider from "./HomeSlider";
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -27,6 +27,7 @@ export const Products = [
     color: "black",
     size: "Large",
     price: "20",
+    amount: 1,
   },
   {
     id: 2,
@@ -37,6 +38,7 @@ export const Products = [
     color: "blue",
     size: "Medium",
     price: "16",
+    amount: 1,
   },
   {
     id: 3,
@@ -47,6 +49,7 @@ export const Products = [
     color: "blue",
     size: "Small",
     price: "18",
+    amount: 1,
   },
   {
     id: 4,
@@ -57,6 +60,7 @@ export const Products = [
     color: "brown",
     size: "Large",
     price: "20",
+    amount: 1,
   },
   {
     id: 5,
@@ -67,6 +71,7 @@ export const Products = [
     color: "brown",
     size: "Medium",
     price: "50",
+    amount: 1,
   },
   {
     id: 6,
@@ -77,6 +82,7 @@ export const Products = [
     color: "black",
     size: "43",
     price: "99",
+    amount: 1,
   },
   {
     id: 7,
@@ -87,6 +93,7 @@ export const Products = [
     color: "white",
     size: "43",
     price: "160",
+    amount: 1,
   },
   {
     id: 8,
@@ -97,6 +104,7 @@ export const Products = [
     color: "white",
     size: "40",
     price: "130",
+    amount: 1,
   },
   {
     id: 9,
@@ -107,6 +115,7 @@ export const Products = [
     color: "brown",
     size: "40",
     price: "130",
+    amount: 1,
   },
   {
     id: 10,
@@ -117,6 +126,7 @@ export const Products = [
     color: "brown",
     size: "40",
     price: "130",
+    amount: 1,
   },
   {
     id: 11,
@@ -127,6 +137,7 @@ export const Products = [
     color: "blue",
     size: "40",
     price: "130",
+    amount: 1,
   },
   {
     id: 12,
@@ -137,6 +148,7 @@ export const Products = [
     color: "white",
     size: "Medium",
     price: "10",
+    amount: 1,
   },
 ];
 
