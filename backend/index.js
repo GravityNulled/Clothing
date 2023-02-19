@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 var cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 const userRoute = require("./routes/UserRoute");
 const authRoute = require("./routes/AuthRoute");
@@ -12,6 +13,7 @@ const orderRoute = require("./routes/OrderRoute");
 dotenv.config();
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cookieParser());
