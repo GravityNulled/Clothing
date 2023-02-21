@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-
+import { publicRequest } from "../axiosConfig";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,11 +13,15 @@ const Register = () => {
     if (password != confirmPassword) {
       return console.log("Email and Pass should be same");
     }
-    const { data } = await axios.post("", JSON.stringify(userData), {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const { data } = await publicRequest.post(
+      "/users/register",
+      JSON.stringify(userData),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
   const userData = {
     email,
