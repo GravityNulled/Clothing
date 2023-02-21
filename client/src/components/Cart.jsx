@@ -7,7 +7,6 @@ const Cart = () => {
   const totalCost = cart.reduce((total, item) => {
     return total + item.cartAmount * item.price;
   }, 0);
-  console.log(totalCost);
   return (
     <section className="py-10 w-full">
       <div className="container mx-auto md:w-5/6">
@@ -35,7 +34,7 @@ const Cart = () => {
                     </button>
                     <p>{item.cartAmount}</p>
                     <button
-                      className="px-6 py-1 border-black border-2" 
+                      className="px-6 py-1 border-black border-2"
                       onClick={() => dispatch(increment(item))}
                     >
                       +

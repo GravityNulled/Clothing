@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { Products } from "../data";
 import ProductCard from "./ProductCard";
 import axios from "axios";
-
+import { PropagateLoader } from "react-spinners";
 const ProductList = () => {
   const { data, isLoading, isError } = useQuery(["products"], async () => {
     const res = await axios.get("http://localhost:5000/api/products/");
@@ -13,16 +13,8 @@ const ProductList = () => {
   return (
     <section className="py-10">
       <div className="container mx-auto md:w-5/6">
-        {isLoading && (
-          <div>
-            <p>"Loading Data"</p>
-          </div>
-        )}
-        {isError && (
-          <div>
-            <p>"Error while Loading Data"</p>
-          </div>
-        )}
+        {isLoading && <PropagateLoader color="#36d7b7" loading size={19} />}
+        {isError && <p>Error while Loading Data"</p>}
 
         <div className="grid gap-x-2 gap-y-3 xl:grid-cols-4 md:grid-cols-2">
           {data &&

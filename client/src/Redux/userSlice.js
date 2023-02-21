@@ -17,12 +17,15 @@ const userSlice = createSlice({
       state.isSigning = false;
       state.isError = true;
     },
-    user: (state, action) => {
+    loginuser: (state, action) => {
       state.user = action.payload;
       state.isSigning = false;
+    },
+    logout: (state) => {
+      state.user = null;
     },
   },
 });
 
-const { loginStart, isError, user } = userSlice.actions;
+export const { loginStart, isError, loginuser, logout } = userSlice.actions;
 export default userSlice.reducer;

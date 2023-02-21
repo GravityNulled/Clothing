@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import { AiOutlineDown } from "react-icons/ai";
 import Advert from "./Advert";
-
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../Redux/userSlice";
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
   return (
     <header className="shadow-sm">
       <Advert />
@@ -37,12 +40,23 @@ const Navbar = () => {
                 <span className="absolute top-0 right-0 text-red-500">0</span>
               </div>
             </Link>
-            <Link to={"/register"}>
-              <button className="font-bold py-3 px-2">REGISTER</button>
-            </Link>
-            <Link to={"/login"}>
-              <button className="font-bold py-3 px-2">LOGIN</button>
-            </Link>
+            {user ? (
+              <button
+                onClick={() => dispatch(logout)}
+                className="text-black hover:cursor-pointer text-xl px-2"
+              >
+                {user?.userInfo.username}
+              </button>
+            ) : (
+              <div className="">
+                <Link to={"/register"}>
+                  <button className="font-bold py-3 px-2">Register</button>
+                </Link>
+                <Link to={"/login"}>
+                  <button className="font-bold py-3 px-2">Login</button>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

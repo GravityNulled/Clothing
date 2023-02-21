@@ -1,16 +1,22 @@
 import React from "react";
-import axios from "axios";
+import { publicRequest } from "../axiosConfig";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { loginStart, isError, loginuser } from "../Redux/userSlice";
+import { useSelector, useDispatch } from "react-redux";
+
 const Login = () => {
+  const dispatch = useDispatch();
+ 
   const [redirect, setRedirect] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data, status } = await axios.post(
-        "http://localhost:5000/api/users/login",
+      const { data } = await publicRequest.post(
+        "users/login",
         JSON.stringify(userData),
         {
           headers: {
@@ -18,10 +24,10 @@ const Login = () => {
           },
         }
       );
-      console.log(data);
+      dispatch(loginuser(data));
       setRedirect(true);
     } catch (error) {
-      alert("Failed", error);
+      setError(true);
     }
   };
   const userData = {
@@ -48,7 +54,13 @@ const Login = () => {
             placeholder="Password"
             className="border border-black h-[50px] px-2"
           />
-          <button className="border px-2 py-1 bg-teal-300">Login</button>
+          <p>{error && "Error occurred"}</p>
+          <button
+            onClick={(e) => dispatch(loginStart(e))}
+            className="border px-2 py-1 bg-teal-300"
+          >
+            Login
+          </button>
         </form>
       </div>
     </section>
