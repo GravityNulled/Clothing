@@ -13,6 +13,8 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import RootLayout from "./components/rootLayout";
+import Login from "./components/Login";
+import Register from "./components/Register";
 function App() {
   const router = createBrowserRouter([
     {
@@ -34,6 +36,14 @@ function App() {
         {
           path: "/cart",
           element: <Cart />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
         },
       ],
     },

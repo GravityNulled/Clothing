@@ -27,7 +27,7 @@ const Navbar = () => {
           </div>
           <div className="flex">
             <Link to={"/"}>
-              <h1 className="font-bold text-2xl">CLOTHING</h1>
+              <h1 className="font-bold text-xl md:text-2xl">CLOTHING</h1>
             </Link>
           </div>
           <div className="flex items-center gap-1 md:gap-5">
@@ -37,8 +37,12 @@ const Navbar = () => {
                 <span className="absolute top-0 right-0 text-red-500">0</span>
               </div>
             </Link>
-            <button className="font-bold p-3">REGISTER</button>
-            <button className="font-bold p-3">LOGIN</button>
+            <Link to={"/register"}>
+              <button className="font-bold py-3 px-2">REGISTER</button>
+            </Link>
+            <Link to={"/login"}>
+              <button className="font-bold py-3 px-2">LOGIN</button>
+            </Link>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ const Home = () => {
       <div className="container mx-auto md:w-5/6">
         <Swiper
           autoplay={{
-            delay: 2000,
+            delay: 2500,
           }}
           navigation={true}
           modules={[Pagination, Navigation, Autoplay]}
