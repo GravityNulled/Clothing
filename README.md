@@ -3,9 +3,9 @@
 An 🛒 ecommerce webapplication created in Reactjs and TailwindCSS. <br>
 The backend is powered by Nodejs.
 
-## Lading Page
+## Landing Page
 
-[![CLOTHING.](./clothing.png)
+![CLOTHING.](./clothing.png)
 
 ## Todo
 
