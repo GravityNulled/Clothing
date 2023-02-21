@@ -1,22 +1,37 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 const Login = () => {
+  const [redirect, setRedirect] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post("", JSON.stringify(userData), {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    try {
+      const { data, status } = await axios.post(
+        "http://localhost:5000/api/users/login",
+        JSON.stringify(userData),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(data);
+      setRedirect(true);
+    } catch (error) {
+      alert("Failed", error);
+    }
   };
   const userData = {
     email,
     password,
   };
-
+  if (redirect) {
+    return <Navigate to={"/"} />;
+  }
+  console.log(redirect);
   return (
     <section onSubmit={(e) => handleSubmit(e)} className="py-10 h-[100vh]">
       <div className="container mx-auto md:w-5/6">

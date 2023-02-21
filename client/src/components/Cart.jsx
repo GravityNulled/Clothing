@@ -5,7 +5,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
   const totalCost = cart.reduce((total, item) => {
-    return total + item.amount * item.price;
+    return total + item.cartAmount * item.price;
   }, 0);
   console.log(totalCost);
   return (
@@ -15,34 +15,34 @@ const Cart = () => {
         {/* card */}
         <div className="grid gap-7 md:grid-cols-2">
           {/* cart Card */}
-          {cart.map((item) => {
+          {cart.map((item, index) => {
             return (
-              <div className="border gap-4 items-center flex">
+              <div key={index} className="border gap-4 items-center flex">
                 <img
                   src={item.img}
                   className="max-w-[150px]  max-h-[150px]"
                   alt=""
                 />
                 <div className="flex flex-col">
-                  <p className="mb-3">{item.name}</p>
+                  <p className="mb-3">{item.title}</p>
                   <div className="flex items-center gap-3">
                     <button
-                      disabled={item.amount < 2}
+                      disabled={item.cartAmount < 2}
                       className="px-6 py-1 border-black border-2"
                       onClick={() => dispatch(decrement(item))}
                     >
                       -
                     </button>
-                    <p>{item.amount}</p>
+                    <p>{item.cartAmount}</p>
                     <button
-                      className="px-6 py-1 border-black border-2"
+                      className="px-6 py-1 border-black border-2" 
                       onClick={() => dispatch(increment(item))}
                     >
                       +
                     </button>
                   </div>
                   <p className="py-1 font-semibold">
-                    Ksh {item.price * item.amount}
+                    Ksh {item.price * item.cartAmount}
                   </p>
                   <button
                     onClick={() => dispatch(remove(item))}
@@ -62,8 +62,8 @@ const Cart = () => {
             {cart.map((item) => {
               return (
                 <div className="flex gap-3">
-                  <p className="font-semibold">{item.name}</p>
-                  <p className="font-semibold">Amount {item.amount}</p>
+                  <p className="font-semibold">{item.title}</p>
+                  <p className="font-semibold">Amount {item.cartAmount}</p>
                 </div>
               );
             })}
